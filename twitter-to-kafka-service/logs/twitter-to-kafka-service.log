@@ -1,0 +1,790 @@
+2022-09-04 12:54:11 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 7194 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 12:54:11 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 12:54:12 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.822 seconds (JVM running for 1.621)
+2022-09-04 12:54:12 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 12:54:12 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 12:54:12 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 12:54:12 [Twitter Stream consumer /  [1][initializing]] INFO  twitter4j.TwitterStreamImpl - Establishing connection.
+2022-09-04 12:54:12 [main] INFO  c.m.t.t.k.s.r.i.TwitterKafkaStreamRunner - Started filtering twitter stream for keywords [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 12:54:15 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - 403:The request is understood, but it has been refused. An accompanying error message will explain why. This code is used when requests are being denied due to update limits (https://support.twitter.com/articles/15364-about-twitter-limits-update-api-dm-and-following).
+<html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 403 
+Please use V2 filtered and sample volume stream as alternatives
+</title>
+</head>
+<body>
+<h2>HTTP ERROR: 403</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    
+Please use V2 filtered and sample volume stream as alternatives
+</pre>
+</body>
+</html>
+
+2022-09-04 12:54:15 [Twitter Stream consumer /  [1][Establishing connection]] WARN  twitter4j.TwitterStreamImpl - This account is not in required role. 403:The request is understood, but it has been refused. An accompanying error message will explain why. This code is used when requests are being denied due to update limits (https://support.twitter.com/articles/15364-about-twitter-limits-update-api-dm-and-following).
+<html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 403 
+Please use V2 filtered and sample volume stream as alternatives
+</title>
+</head>
+<body>
+<h2>HTTP ERROR: 403</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    
+Please use V2 filtered and sample volume stream as alternatives
+</pre>
+</body>
+</html>
+
+2022-09-04 12:54:15 [SpringApplicationShutdownHook] INFO  c.m.t.t.k.s.r.i.TwitterKafkaStreamRunner - Closing twitter stream!
+2022-09-04 13:33:13 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 7991 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 13:33:13 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 13:33:13 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.762 seconds (JVM running for 1.514)
+2022-09-04 13:33:13 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 13:33:13 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 13:33:13 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 13:33:13 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 13:33:15 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-04 13:33:15 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: org.json.JSONException: JSONObject["data"] not found.
+	at org.json.JSONObject.get(JSONObject.java:587)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.getRules(TwitterV2StreamHelper.java:159)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.setupRules(TwitterV2StreamHelper.java:107)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:38)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	... 5 common frames omitted
+2022-09-04 13:35:08 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 8017 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 13:35:08 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 13:35:08 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.571 seconds (JVM running for 1.111)
+2022-09-04 13:35:08 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 13:35:08 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 13:35:08 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 13:35:08 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 13:35:08 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-04 13:35:09 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: org.json.JSONException: JSONObject["data"] not found.
+	at org.json.JSONObject.get(JSONObject.java:587)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.getRules(TwitterV2StreamHelper.java:159)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.setupRules(TwitterV2StreamHelper.java:107)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:38)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	... 5 common frames omitted
+2022-09-04 13:37:49 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 8081 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 13:37:49 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 13:37:49 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.695 seconds (JVM running for 1.47)
+2022-09-04 13:37:49 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 13:37:49 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 13:37:49 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 13:37:49 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 13:37:50 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-04 13:37:50 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: org.json.JSONException: JSONObject["data"] not found.
+	at org.json.JSONObject.get(JSONObject.java:587)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.getRules(TwitterV2StreamHelper.java:159)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.setupRules(TwitterV2StreamHelper.java:107)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:38)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	... 5 common frames omitted
+2022-09-04 13:49:03 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 8370 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 13:49:03 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 13:49:04 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.814 seconds (JVM running for 1.486)
+2022-09-04 13:49:04 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 13:49:04 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 13:49:04 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 13:49:04 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 13:49:05 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-04 13:49:05 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: org.json.JSONException: JSONObject["data"] not found.
+	at org.json.JSONObject.get(JSONObject.java:587)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.getRules(TwitterV2StreamHelper.java:159)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.setupRules(TwitterV2StreamHelper.java:107)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:38)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	... 5 common frames omitted
+2022-09-04 14:02:42 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 8789 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 14:02:42 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 14:02:42 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.78 seconds (JVM running for 1.425)
+2022-09-04 14:02:42 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 14:02:42 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 14:02:42 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 14:02:42 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 14:02:43 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-04 14:02:43 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: org.json.JSONException: JSONObject["data"] not found.
+	at org.json.JSONObject.get(JSONObject.java:587)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.getRules(TwitterV2StreamHelper.java:159)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.setupRules(TwitterV2StreamHelper.java:107)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:38)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	... 5 common frames omitted
+2022-09-04 14:36:16 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 9717 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 14:36:16 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 14:36:16 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.803 seconds (JVM running for 1.452)
+2022-09-04 14:36:16 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 14:36:16 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 14:36:16 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 14:36:16 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 14:36:19 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2StreamHelper - Created rules for twitter stream Java
+2022-09-04 14:36:20 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-04 14:36:20 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: java.lang.NullPointerException: null
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.connectStream(TwitterV2StreamHelper.java:87)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:39)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	... 5 common frames omitted
+2022-09-04 14:37:16 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 9728 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 14:37:16 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 14:37:17 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.837 seconds (JVM running for 1.765)
+2022-09-04 14:37:17 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 14:37:17 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 14:37:17 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 14:37:57 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 14:38:00 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 9737 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 14:38:00 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 14:38:00 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.712 seconds (JVM running for 1.349)
+2022-09-04 14:38:00 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 14:38:00 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 14:38:00 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 14:38:36 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 14:38:59 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 9758 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 14:38:59 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 14:38:59 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.716 seconds (JVM running for 1.306)
+2022-09-04 14:38:59 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 14:38:59 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 14:38:59 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 14:38:59 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 14:39:00 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-04 14:39:00 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: org.json.JSONException: JSONObject["data"] not found.
+	at org.json.JSONObject.get(JSONObject.java:587)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.getRules(TwitterV2StreamHelper.java:159)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.setupRules(TwitterV2StreamHelper.java:107)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:38)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	... 5 common frames omitted
+2022-09-04 15:01:42 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 10771 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 15:01:42 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 15:01:42 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.696 seconds (JVM running for 1.363)
+2022-09-04 15:01:42 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 15:01:42 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:01:42 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 15:01:42 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:01:44 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-04 15:01:44 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: org.json.JSONException: JSONObject["data"] not found.
+	at org.json.JSONObject.get(JSONObject.java:587)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.getRules(TwitterV2StreamHelper.java:159)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.setupRules(TwitterV2StreamHelper.java:107)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:38)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	... 5 common frames omitted
+2022-09-04 15:02:47 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 10788 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 15:02:47 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 15:02:48 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.692 seconds (JVM running for 1.414)
+2022-09-04 15:02:48 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 15:02:48 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:02:48 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 15:03:00 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:03:02 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 10792 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 15:03:02 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 15:03:02 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.718 seconds (JVM running for 1.413)
+2022-09-04 15:03:02 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 15:03:02 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:03:02 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 15:03:02 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:03:19 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 10799 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 15:03:19 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 15:03:20 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.645 seconds (JVM running for 1.269)
+2022-09-04 15:03:20 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 15:03:20 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:03:20 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 15:03:20 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:03:21 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-04 15:03:21 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: org.json.JSONException: JSONObject["data"] not found.
+	at org.json.JSONObject.get(JSONObject.java:587)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.getRules(TwitterV2StreamHelper.java:159)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.setupRules(TwitterV2StreamHelper.java:107)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:38)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	... 5 common frames omitted
+2022-09-04 15:03:41 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 10803 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 15:03:41 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 15:03:41 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.76 seconds (JVM running for 1.517)
+2022-09-04 15:03:41 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 15:03:41 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:03:41 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 15:03:41 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:07:38 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-04 15:07:38 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: org.json.JSONException: JSONObject["data"] not found.
+	at org.json.JSONObject.get(JSONObject.java:587)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.getRules(TwitterV2StreamHelper.java:159)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.setupRules(TwitterV2StreamHelper.java:107)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:38)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	... 5 common frames omitted
+2022-09-04 15:07:40 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 10890 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 15:07:40 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 15:07:40 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.64 seconds (JVM running for 1.204)
+2022-09-04 15:07:40 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 15:07:40 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:07:40 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 15:07:40 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:07:42 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-04 15:07:42 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: org.json.JSONException: JSONObject["data"] not found.
+	at org.json.JSONObject.get(JSONObject.java:587)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.getRules(TwitterV2StreamHelper.java:159)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.setupRules(TwitterV2StreamHelper.java:107)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:38)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	... 5 common frames omitted
+2022-09-04 15:09:22 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 10960 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 15:09:22 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 15:09:22 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.764 seconds (JVM running for 1.447)
+2022-09-04 15:09:22 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 15:09:22 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:09:22 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 15:09:22 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:09:23 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-04 15:09:23 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: org.json.JSONException: JSONObject["data"] not found.
+	at org.json.JSONObject.get(JSONObject.java:587)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.getRules(TwitterV2StreamHelper.java:159)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.setupRules(TwitterV2StreamHelper.java:107)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:38)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	... 5 common frames omitted
+2022-09-04 15:10:06 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 11028 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 15:10:06 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 15:10:06 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.682 seconds (JVM running for 1.3)
+2022-09-04 15:10:06 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 15:10:06 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:10:06 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 15:10:06 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:10:07 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-04 15:10:07 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: org.json.JSONException: JSONObject["data"] not found.
+	at org.json.JSONObject.get(JSONObject.java:587)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.getRules(TwitterV2StreamHelper.java:159)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.setupRules(TwitterV2StreamHelper.java:107)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:38)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	... 5 common frames omitted
+2022-09-04 15:13:34 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 11213 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 15:13:34 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 15:13:35 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.622 seconds (JVM running for 1.128)
+2022-09-04 15:13:35 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 15:13:35 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:13:35 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 15:13:35 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:13:36 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-04 15:13:36 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: org.json.JSONException: JSONObject["data"] not found.
+	at org.json.JSONObject.get(JSONObject.java:587)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.getRules(TwitterV2StreamHelper.java:159)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.setupRules(TwitterV2StreamHelper.java:107)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:38)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	... 5 common frames omitted
+2022-09-04 15:24:28 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 11363 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 15:24:28 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 15:24:29 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.14 seconds (JVM running for 1.988)
+2022-09-04 15:24:29 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 15:24:29 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:24:29 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 15:24:29 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:24:30 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-04 15:24:30 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: org.json.JSONException: JSONObject["data"] not found.
+	at org.json.JSONObject.get(JSONObject.java:587)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.getRules(TwitterV2StreamHelper.java:159)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.setupRules(TwitterV2StreamHelper.java:107)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:38)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	... 5 common frames omitted
+2022-09-04 15:25:20 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 11376 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 15:25:20 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 15:25:20 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.831 seconds (JVM running for 1.639)
+2022-09-04 15:25:20 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 15:25:20 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:25:20 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 15:25:20 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:26:21 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-04 15:26:21 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: org.json.JSONException: JSONObject["data"] not found.
+	at org.json.JSONObject.get(JSONObject.java:587)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.getRules(TwitterV2StreamHelper.java:159)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.setupRules(TwitterV2StreamHelper.java:107)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:38)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	... 5 common frames omitted
+2022-09-04 15:26:23 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 11389 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 15:26:23 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 15:26:23 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.661 seconds (JVM running for 1.168)
+2022-09-04 15:26:23 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 15:26:23 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:26:23 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 15:26:23 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:26:27 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2StreamHelper - Created rules for twitter stream Java
+2022-09-04 15:27:10 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Télégram👉https://t.co/nH1BsLATSc
+
+#Job #Java #Programming #Coding #100DaysofCode #DEVCommunity #poupettekenza #quebec #annacy #gamedev #anime #france #gamedevelopment #gamedesign #indiegame #mobilegaming #paris #Nantes #videogaming #gamer #gaming  #IoT #beuh #TeamOM #goodmorning https://t.co/oqYWYMBtQu
+2022-09-04 15:27:10 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @GuidesJava: ArrayList vs LinkedList #Java https://t.co/AVQlOAEFGx
+2022-09-04 15:27:10 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @kitapvsozler: ''Ölümün olduğu bu dünyada,
+hiçbir şey çok da ciddi değildir aslında..''
+
+Franz Kafka https://t.co/hm4pKpwsV4
+2022-09-04 15:27:10 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Ruka_674xy: Anything that has real and lasting value is always a gift from within.
+  
+　　　　　/ Franz Kafka
+＿
+
+©️Norman Parkinson https://…
+2022-09-04 15:27:10 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @kevinrandy02: Events In React
+#web #developer #HTML #CSS #Java #JavaScript #JS #Python #SQL #Reactjs #IIoT  #Cloud #codetune #BigData…
+2022-09-04 15:27:10 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Hesan01: من می خوام دوره دوم کلاس طراحی وب به  صورت رایگان و مجازی برگزار کنم  و توش #java_script یا #reactjs استارت بزنم لطفا ریتوییت…
+2022-09-04 15:27:10 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @moerland_linda wat een mafklappers wijf ben jij een deuger die mensen tegen elkaar opzetten, jij bent aan het stoken
+2022-09-04 15:27:10 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text JavaScriptとJavaが完全なる別物だということを今知りました。メロンとメロンパンのレベルで違うと読み。
+そうか、そうなのか～。小4息子が集中してやっていたのはJavaScriptではなく、Javaだったのか、知らなんだ。とコードを書く息子を横目で見つめる、日曜日の夜。
+#Java 
+#小学生エンジニア育成中
+2022-09-04 15:27:10 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @BoyzFess_ Di provinsi mana tuh
+2022-09-04 15:27:10 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text 💔 https://t.co/syzwNlbDLt
+2022-09-04 15:27:10 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text 🚨 Job Update #hiring 
+https://t.co/KXPXu3npDR
+2022-09-04 15:27:10 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @smc429 John Malone, libertarian-billionaire
+Most powerful investor in Warner-Discovery
+Holds seat on the board
+Long standing ties with WBD CEO
+
+"Fox News, in my opinion has followed an interesting trajectory...some actual journalism of trying to have 'news' news"
+https://t.co/omPNyfjD0v
+2022-09-04 15:27:10 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text If I could recommend an intermediate programming language, it would be Go. It pisses you off with the lack of data structure libraries that Python or Java would give you, but has enough modern language features to keep you around. I hate it, but I like programming in it…
+2022-09-04 15:27:10 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @Hesan01 اگه میشه نحوه شرکت کردنش رو به منم اطلاع بدید
+2022-09-04 15:27:10 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text ❗ランキング:12位❗(ナイト＆週末セール)
+
+「AQUOS 43V型4K液晶テレビ　DN2ライン　4KBS/ CSチューナー内蔵 4T-C43DN2」
+メーカ:SHARP
+
+価格:¥92,800✨ポイント5倍✨(21:27)
+
+https://t.co/eSjL5PdGyk
+2022-09-04 15:27:10 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text ❗ランキング：12位❗(電源パーツ)
+
+「■TOUGHPOWER PF1 750W Compact -PLATINUM- PS-TPD-0750FNFAPJ-1」
+メーカ:Thermaltake
+
+価格:¥18,161✨
+🔥売り切れ間近🔥(21:27)
+
+https://t.co/dWHBuzxDHm
+2022-09-04 15:27:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text saçımda defalarca radikal değişimlere gittim. hepsi istisnasız kafamın aşırı rahat olduğu dönemlerdi. ne zaman kötü, çaresiz vs hissetsem saçımı saldım. kestirmeyi vs bırak tarayasım gelmiyor öyle zamanlarda. kafka da okuyorum. biraz farklıyım galiba......
+2022-09-04 15:27:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Rahmat Darmawan Beberkan Penyebab Kekalahan RANS Nusantara FC dari Persib https://t.co/WSExiZfzId
+2022-09-04 15:27:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @KAFKA_Dev . 
+Miepje Kaffertje heeft stront in z'n hersenpan, daarom miept hij maar wat onzinnig, zoveel hij kan 🤡
+.
+2022-09-04 15:27:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @kitapvsozler: ''Ölümün olduğu bu dünyada,
+hiçbir şey çok da ciddi değildir aslında..''
+
+Franz Kafka https://t.co/hm4pKpwsV4
+2022-09-04 15:27:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @sawa1110 彼女は敢えて苦難の道を…
+(　･ิω･ิ)ｴｴｺﾔ💕
+2022-09-04 15:27:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Hesan01: من می خوام دوره دوم کلاس طراحی وب به  صورت رایگان و مجازی برگزار کنم  و توش #java_script یا #reactjs استارت بزنم لطفا ریتوییت…
+2022-09-04 15:27:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @kitapvsozler: ''Ölümün olduğu bu dünyada,
+hiçbir şey çok da ciddi değildir aslında..''
+
+Franz Kafka https://t.co/hm4pKpwsV4
+2022-09-04 15:27:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Dm for
+Math
+Biology
+English
+Chemistry
+Sociology
+Psychology
+Genetics
+Microbiology
+Physiology 
+#DataScience #MachineLearning  #Analytics #AI #Tech #IIoT #Python #TensorFlow #Java #ReactJS #DataScientist #Programming #Coding #womenintech #100DaysofCode #CodeNewbies #javascript #Java https://t.co/dOUjuhlxMy
+2022-09-04 15:27:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @konusan_kiitap: “Beni üzecek gücü sana verdiğim için kendimden özür dilerim.”
+
+Franz Kafka
+2022-09-04 15:27:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @Atenasthey @jornalnacional https://t.co/UHJN8FnCp6
+2022-09-04 15:27:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @java_ys: 윤섷 걔네 사귄다더라 https://t.co/cHzlEMpjpk
+2022-09-04 15:27:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Mayassignment: Dm for
+Math
+Biology
+English
+Chemistry
+Sociology
+Psychology
+Genetics
+Microbiology
+Physiology 
+#DataScience #MachineLearni…
+2022-09-04 15:27:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Tutor ngerti java sehari dong
+2022-09-04 15:27:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Mayassignment: Dm for
+Math
+Biology
+English
+Chemistry
+Sociology
+Psychology
+Genetics
+Microbiology
+Physiology 
+#DataScience #MachineLearni…
+2022-09-04 15:27:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text 【SaiCra】Minecraft Java 2 Live #33 天空トラップエンダーマン対策
+ご視聴ありがとうございました
+
+かなりキラキラした改修でしたが
+まだまだエンダーマン対策は
+不十分でした💦
+
+もう少しかな
+
+#SaiCra #Java #Minecraft 
+https://t.co/AMjergf7zv https://t.co/DI6ooCLGsF
+2022-09-04 15:27:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @Kafka_0666 えー！なんだー。。。トーマスさんの嘘かぁ😂
+新たな呼び名が生まれてたのかとワクワクしちゃいました🥸ｷﾘｯ✨
+2022-09-04 15:27:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Covfefe_King: @Sophieresists It’s the new owner, John Malone. https://t.co/PShlcsi1kP
+2022-09-04 15:28:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text wechat：Tiennne
+#Python/C++/R等全领域CS代写 #CS作业代写 #代码代写 #CS编程代上代修 #数据挖掘代写 #机器学习代写 #计算机代写 #JAVA代写 #期中考试代写 #Python/C++/R等全领域CS代考代写 #CS作业代考代写 #代码代考代写 https://t.co/et3Y5lQODn
+2022-09-04 15:28:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @gy_at91 こちらでdc2人出ましたが、状況いかがでしょうか？
+2022-09-04 15:28:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @pisniejlauw @HZwartemeer @KAFKA_Dev De memo waaruit blijkt dat je alleen mag reageren indien je het met hem eens bent heb ik gemist.
+2022-09-04 15:28:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text プログラマー必見！”java情報発信アカウント”#java
+2022-09-04 15:28:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @lovelyfin00 Hello, we created a developer community here on twitter... It will be great to have you join our community and share your job opportunities with us ma
+https://t.co/gPCSeche74
+2022-09-04 15:28:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @kevinrandy02: Events In React
+#web #developer #HTML #CSS #Java #JavaScript #JS #Python #SQL #Reactjs #IIoT  #Cloud #codetune #BigData…
+2022-09-04 15:28:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @batazar12: Télégram👉https://t.co/nH1BsLATSc
+
+#Job #Java #Programming #Coding #100DaysofCode #DEVCommunity #poupettekenza #quebec #annac…
+2022-09-04 15:28:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @MANIKAN07933934: Best of Nmap Cheat Sheet
+Credit: https://t.co/lXX0GsplLc…
+#DataScience #MachineLearning  #Analytics #AI #ML #Tech #IIo…
+2022-09-04 15:28:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @TechKates: Explore 6 Sure Ways to Ace Your Data Science Interview by @CatherineAdenle  https://t.co/FZDTCfVsmu #DataScience #AI #ML #da…
+2022-09-04 15:28:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Mayassignment: Dm for
+Math
+Biology
+English
+Chemistry
+Sociology
+Psychology
+Genetics
+Microbiology
+Physiology 
+#DataScience #MachineLearni…
+2022-09-04 15:28:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @ramsatt: JSP Interview Questions and Answers 2021
+#angular #html #javascript #css #programming #java #python #reactjs #webdevelopment #…
+2022-09-04 15:28:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @iamsimuna: Linux folders structure
+
+#devops #devsecops #kubernetes #cicd #k8s #linux #docker #sysadmin #automation #technology #cloudco…
+2022-09-04 15:28:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @energyengineer9: Basic knowledge of blockchain that is super easy to understand
+
+#Blockchain #AI #DataSecurity #ML #dataScientist #NLP…
+2022-09-04 15:28:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @BMPI11: 本文介绍Go/Java/C/C++/Swift等编程语言是如何实现泛型的。 https://t.co/0GjUkqujZW 来自 @madawei2699
+2022-09-04 15:28:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @VKazulkin: "#Microservices: Metrics and Health Monitoring" https://t.co/sy1RDyg4NF
+2022-09-04 15:28:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Looking to score a job at SS&C Technologies? You're in luck. Click the link in our bio for the job description and information on how to apply: Manager - Java Developer
+2022-09-04 15:28:24 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 11422 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 15:28:24 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 15:28:25 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.684 seconds (JVM running for 1.263)
+2022-09-04 15:28:25 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 15:28:25 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:28:25 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 15:28:25 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:28:29 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2StreamHelper - Created rules for twitter stream Java
+2022-09-04 15:29:01 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @moerland_linda Helemaal gestoord door de roverheid 😂
+2022-09-04 15:29:01 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @KAFKA_Dev Weer een wappie protest op de Dam vandaag?
+Dit had ook op een doordeweekse dag gekund, want niemand hoeft toch te werken van dat zooitje.
+2022-09-04 15:29:01 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Mayassignment: We can handle your
+Statistics
+Nursing
+Law
+Physics
+Genetics
+Literature
+Philosophy
+Astrology
+#DataScience #MachineLearning…
+2022-09-04 15:29:01 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text 【9月/JAVA/横浜YBP/リモート有】証券システム保守開発
+https://t.co/IRwPnNg7Uv
+#求人 #人材募集  #システムエンジニア  #JAVA
+2022/9/4 21:28 https://t.co/nI9tYdTlho
+2022-09-04 15:29:01 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @gertjanbrok @KAFKA_Dev Ik vraag me af, waarom dit soort mannen ( lees ook Willem Engerd) dit soort vrouwen hebben... zou het dan echt zo zijn dat deze vrouwen op hun rug het geld verdienen voor hun partners..( verkapte slavernij!)
+2022-09-04 15:29:01 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @bitcoin_zhenye 是吗？
+一起加油吧！😄
+2022-09-04 15:29:01 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @CodingPullingo: The Basics of Angular Component Inheritance
+#angular #html #javascript #css #programming #java #python #reactjs #webdev…
+2022-09-04 15:29:01 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @robbertjediscus: @Politie @Het_OM De veroordeelde 'Kafka' (Bouke van de Vrugt) treedt op in een 'Samen voor Nederland' event. Ik neem a…
+2022-09-04 15:29:01 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @thebmg4182 Bedrock is okay for achievements and maps, I just couldn't imagine playing a long-term bedrock world
+2022-09-04 15:29:01 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @himatsubushiii_ これを機に改名しますか😘💕
+2022-09-04 15:29:01 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @KAFKA_Dev: Duizenden mensen op de Dam in Amsterdam! Samen met Pepijn van Houwelingen, Van haga, Gideon van Meijeren & Willem Engel. Gew…
+2022-09-04 15:29:01 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @CodingPullingo: The Basics of Angular Component Inheritance
+#angular #html #javascript #css #programming #java #python #reactjs #webdev…
+2022-09-04 15:29:01 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @palomacreative @jayrosen_nyu @TheRynheart @froomkin @CNN …new alt-right owners
+
+https://t.co/dftfKrrytr
+2022-09-04 15:29:01 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @kevinrandy02: Events In React
+#web #developer #HTML #CSS #Java #JavaScript #JS #Python #SQL #Reactjs #IIoT  #Cloud #codetune #BigData…
+2022-09-04 15:30:38 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.33 with PID 11457 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-04 15:30:38 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-04 15:30:38 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.67 seconds (JVM running for 1.269)
+2022-09-04 15:30:38 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-04 15:30:38 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:30:38 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-04 15:30:38 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-04 15:30:42 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2StreamHelper - Created rules for twitter stream Java
+2022-09-04 15:31:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Java again today oof! Collecting loyalty points like Pokémon 😅
+2022-09-04 15:31:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @evil_sara_ @laxmanudt @mani_ramasamy7 @writer_imsa_ @UthayKriz @vanhelsing1313 @itzsaravana12 @PolarizedPunt @Nathan64021483 @heart_Poe8 @bosetalks @PeriyaPalluPuli @IamNaSen @Greeenlays @itzMe_Hariharan @VMMenan @ItsGurubhai @Karthi_Genelia @janu3ji7 @MKT_Bhagavathar @nithyasuja @dineshDj_ @NameIsViji @anisuji @thisaffi @Laksmanan_ @NanDhanKili @VSahayavijay @Pasi_Edukuthu @Aquaa_man1 @thisis_raju @_atolpixz @mohankumarmk41 @Dude_itzMe @Fan_Of_RDJ @CID_Off @Drvallaa @iCrusader_XX @KamalKa29784813 @mukil1123 @ErKaRthi_Offl @ManiTwitss @_Java_Speaks @tanikkattu_raja @KingKuinsan @EthanDeeps @pugazhcse08 @RamyaPremachan @itzme_Saran @Sollakudatham +5610
+2022-09-04 15:31:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text php、mySQLを今後学ぶとして次にC#かJAVAかvueやreactかkotlinかで悩んでる、前者はゲーム系で、真ん中ふたつは全てのフロントで、最後はアプリで要求される
+2022-09-04 15:31:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @swapnakpanda: 🛣️ Full Stack Web Development Roadmap
+
+  Front-End  → HTML, CSS, JavaScript
+        ↓
+  Back-End   → Java/C#/PHP/…
+2022-09-04 15:31:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text A programmer puts two glasses on his bedside table before going to sleep.
+A full one, in case he gets thirsty, and an empty one, in case he doesn't.
+
+#programming #programmingjoke #programminghumor #Python #javascript #Java
+2022-09-04 15:31:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @swapnakpanda: 🛣️ Full Stack Web Development Roadmap
+
+  Front-End  → HTML, CSS, JavaScript
+        ↓
+  Back-End   → Java/C#/PHP/…
+2022-09-04 15:31:03 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @swapnakpanda: 🛣️ Full Stack Web Development Roadmap
+
+  Front-End  → HTML, CSS, JavaScript
+        ↓
+  Back-End   → Java/C#/PHP/…
+2022-09-04 15:31:27 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @HF33235741: absoluut, kijharde acties, overheidsgebouwen gaan bezetten totdat de corruptelinksche nepregering is afgezet en opgesloten,…
+2022-09-04 15:31:27 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @PadmashreeJha: A programmer puts two glasses on his bedside table before going to sleep.
+A full one, in case he gets thirsty, and an em…
+2022-09-04 15:31:27 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @PadmashreeJha: A programmer puts two glasses on his bedside table before going to sleep.
+A full one, in case he gets thirsty, and an em…
+2022-09-04 15:31:27 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @PadmashreeJha: A programmer puts two glasses on his bedside table before going to sleep.
+A full one, in case he gets thirsty, and an em…
+2022-09-04 15:31:27 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text SERYOSO 😂 YUNG TINURO KASI SA SCHOOL TNGINA KALA MO MAHIRAP N UN HINDE! UN SA SCHOOL INTRO LANG PAPALA UN JAVA! 🤣🤣 SOBRANG LALIM AT LAWAK NG JAVA
+2022-09-04 15:31:27 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @iamsimuna: Linux folders structure
+
+#devops #devsecops #kubernetes #cicd #k8s #linux #docker #sysadmin #automation #technology #cloudco…
+2022-09-04 15:31:27 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @Classytrashy_ Asli, susaah bgt kayaknya ya ga ngurusin orang lain gitu 🤣 dulu waktu aku join komunitas buku gitu rangorang yg baca novel kek metropop/romens pada dipandang sebelah mata, kayak "wow cemen bet, baca tuh bacaan klasik dong kayak Kafka atau Orwell wow wow"
+2022-09-04 15:31:27 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @marcelXTTT @droplul1999 @KAFKA_Dev Heel goed meid doe nou maar een koprolletje (profiel foto)
+2022-09-04 15:31:27 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text A guy walks into a bar and asks for 1.4 root beers.
+The bartender says "I'll have to charge you extra, that's a root beer float".
+The guy says "In that case, better make it a double."
+
+#programming #programmingjoke #programminghumor #Python #javascript #Java
+2022-09-04 15:31:27 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Soft_Junk: 0 is not equal to 1
+.
+.
+#stackoverflow #programming #python #html #javascript #programmer #java #coding #css #coder #program…
+2022-09-04 15:31:27 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @PadmashreeJha: A guy walks into a bar and asks for 1.4 root beers.
+The bartender says "I'll have to charge you extra, that's a root bee…
+2022-09-04 15:31:27 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @PadmashreeJha: A guy walks into a bar and asks for 1.4 root beers.
+The bartender says "I'll have to charge you extra, that's a root bee…
+2022-09-04 15:31:27 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @PadmashreeJha: A guy walks into a bar and asks for 1.4 root beers.
+The bartender says "I'll have to charge you extra, that's a root bee…
+2022-09-04 15:31:27 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @Pedromoreirahe not sure lo
+2022-09-04 15:31:27 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text The easiest way to access 
+#devops #devsecops #kubernetes #cicd #k8s #linux #docker #sysadmin #automation #technology #cloudcomputing #serverless #microservices #cheatsheet #MachineLearning #NeuralNetworks #TensorFlow #100DaysOfCode #BigData #Analytics #DevCommunity #Programming https://t.co/MJGc2CmZOg
+2022-09-04 15:31:27 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @java_ys: 윤섷 걔네 사귄다더라 https://t.co/cHzlEMpjpk
+2022-09-04 15:31:27 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @gy_at91 かしこまりした。
+2022-09-04 15:31:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text 人生で最初のプログラミングがcで最初に仕上げたwebアプリがJavaを使ったものだからTypeScriptしっくりくる
+2022-09-04 15:31:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Soft_Junk: 0 is not equal to 1
+.
+.
+#stackoverflow #programming #python #html #javascript #programmer #java #coding #css #coder #program…
+2022-09-04 15:31:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @gp_pulipaka: Free Book to Start Data Science!  #BigData #Analytics #DataScience #IoT #IIoT #PyTorch #Python #RStats #TensorFlow #Java #…
+2022-09-04 15:31:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @moerland_linda: Vandaag is 't grote #WappieUitzwaaiEvenement.
+
+We hebben al 36.653.789 aanmeldingen!
+
+Meld je ook aan door de hashtag #…
+2022-09-04 15:31:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @747Security: The easiest way to access 
+#devops #devsecops #kubernetes #cicd #k8s #linux #docker #sysadmin #automation #technology #clo…
+2022-09-04 15:31:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @java_ys: 윤섷 걔네 사귄다더라 https://t.co/cHzlEMpjpk
+2022-09-04 15:31:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @747Security: The easiest way to access 
+#devops #devsecops #kubernetes #cicd #k8s #linux #docker #sysadmin #automation #technology #clo…
+2022-09-04 15:31:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @747Security: The easiest way to access 
+#devops #devsecops #kubernetes #cicd #k8s #linux #docker #sysadmin #automation #technology #clo…
+2022-09-04 15:31:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @747Security: The easiest way to access 
+#devops #devsecops #kubernetes #cicd #k8s #linux #docker #sysadmin #automation #technology #clo…
+2022-09-04 15:31:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @747Security: The easiest way to access 
+#devops #devsecops #kubernetes #cicd #k8s #linux #docker #sysadmin #automation #technology #clo…
+2022-09-04 15:31:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @kitapvsozler: ''Ölümün olduğu bu dünyada,
+hiçbir şey çok da ciddi değildir aslında..''
+
+Franz Kafka https://t.co/hm4pKpwsV4
+2022-09-04 15:31:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @JohnMWorden1: How to Maintain Good CGPA in University?
+https://t.co/nyly2PNdId
+#IOTA  #DevOps #DEVCommunity #engineerstalk #code #html…
+2022-09-04 15:31:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @PadmashreeJha: A programmer puts two glasses on his bedside table before going to sleep.
+A full one, in case he gets thirsty, and an em…
+2022-09-04 15:31:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @Kafka_0666 カフカ風サン
+ほんのちょっとの語尾でこんなにも印象違うん！
+言葉って素敵✨
+2022-09-04 15:31:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @java_ys: 윤섷 걔네 사귄다더라 https://t.co/cHzlEMpjpk
+2022-09-04 15:31:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @jonasraoni sei nem o que é esse ae 😅
+2022-09-04 15:31:47 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @JohnMWorden1: How to Increase Productivity?
+https://t.co/nyly2PNdId
+#IOTA  #DevOps #DEVCommunity #engineerstalk #code #html #css #java…
