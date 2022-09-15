@@ -6,7 +6,7 @@
 2022-08-30 21:01:16 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
 2022-08-30 21:44:25 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on Barans-MacBook-Pro-4.local with PID 18803 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
 2022-08-30 21:44:25 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2022-08-30 21:44:25 [main] WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.microservices.twitter.to.kafka.service.config.TwitterToKafkaServiceConfigData' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2022-08-30 21:44:25 [main] WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.microservices.twitter.to.kafka.service.com.microservices.config.TwitterToKafkaServiceConfigData' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
 2022-08-30 21:44:25 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
@@ -18,12 +18,12 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication required a bean of type 'com.microservices.twitter.to.kafka.service.config.TwitterToKafkaServiceConfigData' that could not be found.
+Parameter 0 of constructor in com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication required a bean of type 'com.microservices.twitter.to.kafka.service.com.microservices.config.TwitterToKafkaServiceConfigData' that could not be found.
 
 
 Action:
 
-Consider defining a bean of type 'com.microservices.twitter.to.kafka.service.config.TwitterToKafkaServiceConfigData' in your configuration.
+Consider defining a bean of type 'com.microservices.twitter.to.kafka.service.com.microservices.config.TwitterToKafkaServiceConfigData' in your configuration.
 
 2022-08-30 21:44:45 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on Barans-MacBook-Pro-4.local with PID 18809 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
 2022-08-30 21:44:45 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
