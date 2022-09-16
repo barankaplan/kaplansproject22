@@ -31,7 +31,7 @@
         <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <twitter4j.version>4.0.7</twitter4j.version>
-        <lombok.version>1.18.16</lombok.version>
+        <lombok.version>1.18.22</lombok.version>
         <httpclient.version>4.5.13</httpclient.version>
         <json.version>20220320</json.version>
         <avro.version>1.10.0</avro.version>
