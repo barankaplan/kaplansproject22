@@ -1,0 +1,8 @@
+2022-09-14 11:53:19 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.12 on 192.168.1.56 with PID 47351 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-14 11:53:19 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-14 11:53:20 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.812 seconds (JVM running for 1.447)
+2022-09-14 11:53:20 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-14 11:53:20 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Kafka, Elasticsearch]
+2022-09-14 11:53:20 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2022-09-14 11:53:20 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-14 11:53:24 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2StreamHelper - Created rules for twitter stream Java
