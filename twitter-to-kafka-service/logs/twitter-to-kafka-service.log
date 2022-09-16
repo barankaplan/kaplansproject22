@@ -1,612 +1,375 @@
-2022-09-15 16:19:09 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication on 192.168.1.56 with PID 27181 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
-2022-09-15 16:19:09 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
-2022-09-15 16:19:09 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterKafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-2022-09-15 16:19:09 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterKafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:452)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:315)
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:276)
-	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:296)
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:250)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:207)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:175)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:319)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:236)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:96)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
-	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:62)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+2022-09-16 11:15:20 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication on Barans-MacBook-Pro-5.local with PID 56336 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-16 11:15:20 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
+2022-09-16 11:15:21 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2022-09-16 11:15:21 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 2.5.1
+2022-09-16 11:15:21 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 0efa8fb0f4c73d92
+2022-09-16 11:15:21 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1663316121685
+2022-09-16 11:15:22 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port(s): 8080
+2022-09-16 11:15:22 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.485 seconds (JVM running for 2.623)
+2022-09-16 11:15:22 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-16 11:15:22 [main] INFO  c.m.client.KafkaAdminClient - Creating 1 topics(s), attempt 0
+2022-09-16 11:15:22 [main] INFO  c.m.client.KafkaAdminClient - Create topic result [KafkaFuture{value=null,exception=null,done=false}]
+2022-09-16 11:15:22 [main] INFO  c.m.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 0
+2022-09-16 11:15:22 [main] INFO  c.m.t.t.k.s.i.i.KafkaStreamInitializer - Topics with name twitter-topic is ready for operations!
+2022-09-16 11:15:22 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-16 11:15:27 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2StreamHelper - Created rules for twitter stream Java
+2022-09-16 11:16:38 [SpringContextShutdownHook] INFO  c.m.c.s.impl.TwitterKafkaProducer - Closing kafka producer!
+2022-09-16 11:28:15 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication on Barans-MacBook-Pro-5.local with PID 57407 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-16 11:28:15 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
+2022-09-16 11:28:16 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2022-09-16 11:28:16 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 2.5.1
+2022-09-16 11:28:16 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 0efa8fb0f4c73d92
+2022-09-16 11:28:16 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1663316896796
+2022-09-16 11:28:17 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port(s): 8080
+2022-09-16 11:28:17 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.702 seconds (JVM running for 2.576)
+2022-09-16 11:28:17 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-16 11:28:17 [main] INFO  c.m.client.KafkaAdminClient - Creating 1 topics(s), attempt 0
+2022-09-16 11:28:17 [main] INFO  c.m.client.KafkaAdminClient - Create topic result [KafkaFuture{value=null,exception=null,done=false}]
+2022-09-16 11:28:17 [main] INFO  c.m.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 0
+2022-09-16 11:28:22 [reactor-http-nio-2] WARN  r.n.http.client.HttpClientConnect - [id: 0xd7bed4e4, L:0.0.0.0/0.0.0.0:57656] The connection observed an error
+reactor.netty.http.client.PrematureCloseException: Connection prematurely closed BEFORE response
+2022-09-16 11:28:24 [reactor-http-nio-3] WARN  r.n.http.client.HttpClientConnect - [id: 0x59b1bcd4, L:0.0.0.0/0.0.0.0:57661] The connection observed an error
+reactor.netty.http.client.PrematureCloseException: Connection prematurely closed BEFORE response
+2022-09-16 11:28:28 [reactor-http-nio-4] WARN  r.n.http.client.HttpClientConnect - [id: 0x169e66bb, L:0.0.0.0/0.0.0.0:57667] The connection observed an error
+reactor.netty.http.client.PrematureCloseException: Connection prematurely closed BEFORE response
+2022-09-16 11:28:36 [main] INFO  c.m.t.t.k.s.i.i.KafkaStreamInitializer - Topics with name twitter-topic is ready for operations!
+2022-09-16 11:28:36 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-16 11:28:36 [SpringContextShutdownHook] INFO  c.m.c.s.impl.TwitterKafkaProducer - Closing kafka producer!
+2022-09-16 11:28:44 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication on Barans-MacBook-Pro-5.local with PID 57445 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-16 11:28:44 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
+2022-09-16 11:28:45 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2022-09-16 11:28:45 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 2.5.1
+2022-09-16 11:28:45 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 0efa8fb0f4c73d92
+2022-09-16 11:28:45 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1663316925466
+2022-09-16 11:28:45 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port(s): 8080
+2022-09-16 11:28:45 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.55 seconds (JVM running for 2.242)
+2022-09-16 11:28:45 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-16 11:28:45 [main] INFO  c.m.client.KafkaAdminClient - Creating 1 topics(s), attempt 0
+2022-09-16 11:28:45 [main] INFO  c.m.client.KafkaAdminClient - Create topic result [KafkaFuture{value=null,exception=null,done=false}]
+2022-09-16 11:28:45 [main] INFO  c.m.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 0
+2022-09-16 11:28:46 [main] INFO  c.m.t.t.k.s.i.i.KafkaStreamInitializer - Topics with name twitter-topic is ready for operations!
+2022-09-16 11:28:46 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-16 11:28:46 [SpringContextShutdownHook] INFO  c.m.c.s.impl.TwitterKafkaProducer - Closing kafka producer!
+2022-09-16 11:28:52 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication on Barans-MacBook-Pro-5.local with PID 57460 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-16 11:28:52 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
+2022-09-16 11:28:53 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2022-09-16 11:28:53 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 2.5.1
+2022-09-16 11:28:53 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 0efa8fb0f4c73d92
+2022-09-16 11:28:53 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1663316933401
+2022-09-16 11:28:53 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port(s): 8080
+2022-09-16 11:28:53 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.348 seconds (JVM running for 1.951)
+2022-09-16 11:28:53 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-16 11:28:53 [main] INFO  c.m.client.KafkaAdminClient - Creating 1 topics(s), attempt 0
+2022-09-16 11:28:53 [main] INFO  c.m.client.KafkaAdminClient - Create topic result [KafkaFuture{value=null,exception=null,done=false}]
+2022-09-16 11:28:53 [main] INFO  c.m.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 0
+2022-09-16 11:28:53 [main] INFO  c.m.t.t.k.s.i.i.KafkaStreamInitializer - Topics with name twitter-topic is ready for operations!
+2022-09-16 11:28:53 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-16 11:28:57 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2StreamHelper - Created rules for twitter stream Java
+2022-09-16 11:29:49 [SpringContextShutdownHook] INFO  c.m.c.s.impl.TwitterKafkaProducer - Closing kafka producer!
+2022-09-16 12:43:58 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication on Barans-MacBook-Pro-5.local with PID 63952 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
+2022-09-16 12:43:58 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
+2022-09-16 12:43:59 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2022-09-16 12:43:59 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 2.5.1
+2022-09-16 12:43:59 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 0efa8fb0f4c73d92
+2022-09-16 12:43:59 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1663321439429
+2022-09-16 12:43:59 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port(s): 8080
+2022-09-16 12:43:59 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.602 seconds (JVM running for 2.345)
+2022-09-16 12:43:59 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-09-16 12:43:59 [main] INFO  c.m.client.KafkaAdminClient - Creating 1 topics(s), attempt 0
+2022-09-16 12:43:59 [main] INFO  c.m.client.KafkaAdminClient - Create topic result [KafkaFuture{value=null,exception=null,done=false}]
+2022-09-16 12:43:59 [main] INFO  c.m.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 0
+2022-09-16 12:44:00 [main] INFO  c.m.t.t.k.s.i.i.KafkaStreamInitializer - Topics with name twitter-topic is ready for operations!
+2022-09-16 12:44:00 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter stream for keywords: [Java, Microservices, Kafka, Elasticsearch]
+2022-09-16 12:44:04 [main] INFO  c.m.t.t.k.s.r.i.TwitterV2StreamHelper - Created rules for twitter stream Java
+2022-09-16 12:45:09 [main] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Vandoren JAVA T75
+中古で入手したので吹いてみた
+
+上から下まで抜けが良くて、とても吹きやすい
+バンドレンらしく綺麗で素直な音
+V16よりは音が柔らかい印象
+リードちょっと薄かったかも
+
+吹奏楽やっててジャズに興味ある人にはめっちゃオススメ https://t.co/FKvxkzrmhE sending to kafka topic twitter-topic
+2022-09-16 12:45:09 [main] INFO  c.m.c.s.impl.TwitterKafkaProducer - Sending message='{"userId": 124717502, "id": 1570710101669064705, "text": "Vandoren JAVA T75\n中古で入手したので吹いてみた\n\n上から下まで抜けが良くて、とても吹きやすい\nバンドレンらしく綺麗で素直な音\nV16よりは音が柔らかい印象\nリードちょっと薄かったかも\n\n吹奏楽やっててジャズに興味ある人にはめっちゃオススメ https://t.co/FKvxkzrmhE", "createdAt": 1663321445000}' to topic='twitter-topic'
+2022-09-16 12:45:09 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-16 12:45:09 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:779)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:28)
-Caused by: java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:88)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:71)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isConditionMatch(ClassPathScanningCandidateComponentProvider.java:513)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isCandidateComponent(ClassPathScanningCandidateComponentProvider.java:496)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:430)
-	... 21 common frames omitted
-Caused by: org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:169)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.evaluateExpression(OnExpressionCondition.java:60)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.getMatchOutcome(OnExpressionCondition.java:48)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 27 common frames omitted
-Caused by: org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.doParseExpression(InternalSpelExpressionParser.java:135)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:61)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:33)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpressions(TemplateAwareExpressionParser.java:121)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseTemplate(TemplateAwareExpressionParser.java:62)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:49)
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:147)
-	... 30 common frames omitted
-2022-09-15 16:23:04 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication on 192.168.1.56 with PID 27482 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
-2022-09-15 16:23:04 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
-2022-09-15 16:23:04 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterV2KafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner
-2022-09-15 16:23:04 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterV2KafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:452)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:315)
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:276)
-	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:296)
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:250)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:207)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:175)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:319)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:236)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:96)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
-	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:62)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:28)
-Caused by: java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:88)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:71)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isConditionMatch(ClassPathScanningCandidateComponentProvider.java:513)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isCandidateComponent(ClassPathScanningCandidateComponentProvider.java:496)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:430)
-	... 21 common frames omitted
-Caused by: org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:169)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.evaluateExpression(OnExpressionCondition.java:60)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.getMatchOutcome(OnExpressionCondition.java:48)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 27 common frames omitted
-Caused by: org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.doParseExpression(InternalSpelExpressionParser.java:135)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:61)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:33)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpressions(TemplateAwareExpressionParser.java:121)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseTemplate(TemplateAwareExpressionParser.java:62)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:49)
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:147)
-	... 30 common frames omitted
-2022-09-15 16:25:11 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication on 192.168.1.56 with PID 27858 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
-2022-09-15 16:25:11 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
-2022-09-15 16:25:11 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterKafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-2022-09-15 16:25:11 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterKafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:452)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:315)
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:276)
-	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:296)
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:250)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:207)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:175)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:319)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:236)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:96)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
-	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:62)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:28)
-Caused by: java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:88)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:71)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isConditionMatch(ClassPathScanningCandidateComponentProvider.java:513)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isCandidateComponent(ClassPathScanningCandidateComponentProvider.java:496)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:430)
-	... 21 common frames omitted
-Caused by: org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:169)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.evaluateExpression(OnExpressionCondition.java:60)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.getMatchOutcome(OnExpressionCondition.java:48)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 27 common frames omitted
-Caused by: org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.doParseExpression(InternalSpelExpressionParser.java:135)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:61)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:33)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpressions(TemplateAwareExpressionParser.java:121)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseTemplate(TemplateAwareExpressionParser.java:62)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:49)
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:147)
-	... 30 common frames omitted
-2022-09-15 16:27:24 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication on 192.168.1.56 with PID 28417 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
-2022-09-15 16:27:24 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
-2022-09-15 16:27:24 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterKafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-2022-09-15 16:27:24 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterKafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:452)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:315)
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:276)
-	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:296)
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:250)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:207)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:175)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:319)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:236)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:96)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
-	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:62)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:28)
-Caused by: java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:88)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:71)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isConditionMatch(ClassPathScanningCandidateComponentProvider.java:513)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isCandidateComponent(ClassPathScanningCandidateComponentProvider.java:496)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:430)
-	... 21 common frames omitted
-Caused by: org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:169)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.evaluateExpression(OnExpressionCondition.java:60)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.getMatchOutcome(OnExpressionCondition.java:48)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 27 common frames omitted
-Caused by: org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.doParseExpression(InternalSpelExpressionParser.java:135)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:61)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:33)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpressions(TemplateAwareExpressionParser.java:121)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseTemplate(TemplateAwareExpressionParser.java:62)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:49)
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:147)
-	... 30 common frames omitted
-2022-09-15 16:28:08 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication on 192.168.1.56 with PID 28473 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
-2022-09-15 16:28:08 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
-2022-09-15 16:28:08 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterKafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-2022-09-15 16:28:08 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterKafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:452)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:315)
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:276)
-	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:296)
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:250)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:207)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:175)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:319)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:236)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:96)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
-	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:62)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:28)
-Caused by: java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:88)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:71)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isConditionMatch(ClassPathScanningCandidateComponentProvider.java:513)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isCandidateComponent(ClassPathScanningCandidateComponentProvider.java:496)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:430)
-	... 21 common frames omitted
-Caused by: org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:169)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.evaluateExpression(OnExpressionCondition.java:60)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.getMatchOutcome(OnExpressionCondition.java:48)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 27 common frames omitted
-Caused by: org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.doParseExpression(InternalSpelExpressionParser.java:135)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:61)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:33)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpressions(TemplateAwareExpressionParser.java:121)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseTemplate(TemplateAwareExpressionParser.java:62)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:49)
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:147)
-	... 30 common frames omitted
-2022-09-15 16:28:32 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication on 192.168.1.56 with PID 28511 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
-2022-09-15 16:28:32 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
-2022-09-15 16:28:32 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterKafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-2022-09-15 16:28:32 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterKafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:452)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:315)
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:276)
-	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:296)
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:250)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:207)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:175)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:319)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:236)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:96)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
-	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:62)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:28)
-Caused by: java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:88)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:71)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isConditionMatch(ClassPathScanningCandidateComponentProvider.java:513)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isCandidateComponent(ClassPathScanningCandidateComponentProvider.java:496)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:430)
-	... 21 common frames omitted
-Caused by: org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:169)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.evaluateExpression(OnExpressionCondition.java:60)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.getMatchOutcome(OnExpressionCondition.java:48)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 27 common frames omitted
-Caused by: org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.doParseExpression(InternalSpelExpressionParser.java:135)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:61)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:33)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpressions(TemplateAwareExpressionParser.java:121)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseTemplate(TemplateAwareExpressionParser.java:62)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:49)
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:147)
-	... 30 common frames omitted
-2022-09-15 16:33:45 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication on 192.168.1.56 with PID 28893 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
-2022-09-15 16:33:45 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
-2022-09-15 16:33:46 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterKafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-2022-09-15 16:33:46 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterKafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:452)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:315)
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:276)
-	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:296)
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:250)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:207)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:175)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:319)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:236)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:96)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
-	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:62)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:28)
-Caused by: java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:88)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:71)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isConditionMatch(ClassPathScanningCandidateComponentProvider.java:513)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isCandidateComponent(ClassPathScanningCandidateComponentProvider.java:496)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:430)
-	... 21 common frames omitted
-Caused by: org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:169)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.evaluateExpression(OnExpressionCondition.java:60)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.getMatchOutcome(OnExpressionCondition.java:48)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 27 common frames omitted
-Caused by: org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.doParseExpression(InternalSpelExpressionParser.java:135)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:61)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:33)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpressions(TemplateAwareExpressionParser.java:121)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseTemplate(TemplateAwareExpressionParser.java:62)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:49)
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:147)
-	... 30 common frames omitted
-2022-09-15 16:40:31 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication on 192.168.1.56 with PID 29393 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
-2022-09-15 16:40:31 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
-2022-09-15 16:40:32 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterKafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-2022-09-15 16:40:32 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterKafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:452)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:315)
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:276)
-	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:296)
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:250)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:207)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:175)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:319)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:236)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:96)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
-	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:62)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:28)
-Caused by: java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:88)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:71)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isConditionMatch(ClassPathScanningCandidateComponentProvider.java:513)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isCandidateComponent(ClassPathScanningCandidateComponentProvider.java:496)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:430)
-	... 21 common frames omitted
-Caused by: org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:169)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.evaluateExpression(OnExpressionCondition.java:60)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.getMatchOutcome(OnExpressionCondition.java:48)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 27 common frames omitted
-Caused by: org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.doParseExpression(InternalSpelExpressionParser.java:135)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:61)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:33)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpressions(TemplateAwareExpressionParser.java:121)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseTemplate(TemplateAwareExpressionParser.java:62)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:49)
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:147)
-	... 30 common frames omitted
-2022-09-15 16:41:28 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication on 192.168.1.56 with PID 29470 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
-2022-09-15 16:41:28 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
-2022-09-15 16:41:28 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterKafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-2022-09-15 16:41:28 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterKafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:452)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:315)
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:276)
-	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:296)
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:250)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:207)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:175)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:319)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:236)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:96)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
-	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:62)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:28)
-Caused by: java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:88)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:71)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isConditionMatch(ClassPathScanningCandidateComponentProvider.java:513)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isCandidateComponent(ClassPathScanningCandidateComponentProvider.java:496)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:430)
-	... 21 common frames omitted
-Caused by: org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:169)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.evaluateExpression(OnExpressionCondition.java:60)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.getMatchOutcome(OnExpressionCondition.java:48)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 27 common frames omitted
-Caused by: org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.doParseExpression(InternalSpelExpressionParser.java:135)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:61)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:33)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpressions(TemplateAwareExpressionParser.java:121)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseTemplate(TemplateAwareExpressionParser.java:62)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:49)
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:147)
-	... 30 common frames omitted
-2022-09-15 16:46:41 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication on 192.168.1.56 with PID 29910 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
-2022-09-15 16:46:41 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
-2022-09-15 16:46:41 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterKafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-2022-09-15 16:46:41 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterKafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:452)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:315)
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:276)
-	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:296)
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:250)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:207)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:175)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:319)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:236)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:96)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
-	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:62)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:28)
-Caused by: java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:88)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:71)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isConditionMatch(ClassPathScanningCandidateComponentProvider.java:513)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isCandidateComponent(ClassPathScanningCandidateComponentProvider.java:496)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:430)
-	... 21 common frames omitted
-Caused by: org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:169)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.evaluateExpression(OnExpressionCondition.java:60)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.getMatchOutcome(OnExpressionCondition.java:48)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 27 common frames omitted
-Caused by: org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.doParseExpression(InternalSpelExpressionParser.java:135)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:61)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:33)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpressions(TemplateAwareExpressionParser.java:121)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseTemplate(TemplateAwareExpressionParser.java:62)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:49)
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:147)
-	... 30 common frames omitted
-2022-09-15 16:48:03 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication on 192.168.1.56 with PID 30018 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
-2022-09-15 16:48:03 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
-2022-09-15 16:48:03 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterV2KafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner
-2022-09-15 16:48:03 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterV2KafkaStreamRunner.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:452)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:315)
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:276)
-	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:296)
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:250)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:207)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:175)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:319)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:236)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:96)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
-	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:62)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:28)
-Caused by: java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:88)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:71)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isConditionMatch(ClassPathScanningCandidateComponentProvider.java:513)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isCandidateComponent(ClassPathScanningCandidateComponentProvider.java:496)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:430)
-	... 21 common frames omitted
-Caused by: org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:169)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.evaluateExpression(OnExpressionCondition.java:60)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.getMatchOutcome(OnExpressionCondition.java:48)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 27 common frames omitted
-Caused by: org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.doParseExpression(InternalSpelExpressionParser.java:135)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:61)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:33)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpressions(TemplateAwareExpressionParser.java:121)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseTemplate(TemplateAwareExpressionParser.java:62)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:49)
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:147)
-	... 30 common frames omitted
-2022-09-15 16:50:02 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication on 192.168.1.56 with PID 30165 (/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes started by barankaplan in /Users/barankaplan/Desktop/github/kafka/kaplansproject)
-2022-09-15 16:50:02 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
-2022-09-15 16:50:02 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterV2StreamHelper.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper
-2022-09-15 16:50:02 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/Users/barankaplan/Desktop/github/kafka/kaplansproject/twitter-to-kafka-service/target/classes/com/microservices/twitter/to/kafka/service/runner/impl/TwitterV2StreamHelper.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:452)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:315)
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:276)
-	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:296)
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:250)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:207)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:175)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:319)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:236)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:96)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
-	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:62)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:28)
-Caused by: java.lang.IllegalStateException: Error processing condition on com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:88)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:71)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isConditionMatch(ClassPathScanningCandidateComponentProvider.java:513)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isCandidateComponent(ClassPathScanningCandidateComponentProvider.java:496)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:430)
-	... 21 common frames omitted
-Caused by: org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:169)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.evaluateExpression(OnExpressionCondition.java:60)
-	at org.springframework.boot.autoconfigure.condition.OnExpressionCondition.getMatchOutcome(OnExpressionCondition.java:48)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 27 common frames omitted
-Caused by: org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lcurly({)'
-	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.doParseExpression(InternalSpelExpressionParser.java:135)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:61)
-	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:33)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpressions(TemplateAwareExpressionParser.java:121)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseTemplate(TemplateAwareExpressionParser.java:62)
-	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:49)
-	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:147)
-	... 30 common frames omitted
+Caused by: org.apache.kafka.common.config.ConfigException: Invalid value null for configuration acks: String must be one of: all, -1, 0, 1
+	at org.apache.kafka.common.config.ConfigDef$ValidString.ensureValid(ConfigDef.java:941)
+	at org.apache.kafka.common.config.ConfigDef.parseValue(ConfigDef.java:483)
+	at org.apache.kafka.common.config.ConfigDef.parse(ConfigDef.java:467)
+	at org.apache.kafka.common.config.AbstractConfig.<init>(AbstractConfig.java:108)
+	at org.apache.kafka.common.config.AbstractConfig.<init>(AbstractConfig.java:129)
+	at org.apache.kafka.clients.producer.ProducerConfig.<init>(ProducerConfig.java:481)
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:326)
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:287)
+	at org.springframework.kafka.core.DefaultKafkaProducerFactory.createRawProducer(DefaultKafkaProducerFactory.java:669)
+	at org.springframework.kafka.core.DefaultKafkaProducerFactory.createKafkaProducer(DefaultKafkaProducerFactory.java:543)
+	at org.springframework.kafka.core.DefaultKafkaProducerFactory.doCreateProducer(DefaultKafkaProducerFactory.java:520)
+	at org.springframework.kafka.core.DefaultKafkaProducerFactory.createProducer(DefaultKafkaProducerFactory.java:481)
+	at org.springframework.kafka.core.DefaultKafkaProducerFactory.createProducer(DefaultKafkaProducerFactory.java:475)
+	at org.springframework.kafka.core.KafkaTemplate.getTheProducer(KafkaTemplate.java:666)
+	at org.springframework.kafka.core.KafkaTemplate.doSend(KafkaTemplate.java:552)
+	at org.springframework.kafka.core.KafkaTemplate.send(KafkaTemplate.java:369)
+	at com.microservices.configuration.service.impl.TwitterKafkaProducer.send(TwitterKafkaProducer.java:31)
+	at com.microservices.configuration.service.impl.TwitterKafkaProducer.send(TwitterKafkaProducer.java:16)
+	at com.microservices.twitter.to.kafka.service.listener.TwitterKafkaStatusListener.onStatus(TwitterKafkaStatusListener.java:37)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2StreamHelper.connectStream(TwitterV2StreamHelper.java:96)
+	at com.microservices.twitter.to.kafka.service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:39)
+	at com.microservices.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:35)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:795)
+	... 5 common frames omitted
+2022-09-16 12:45:09 [main] INFO  c.m.c.s.impl.TwitterKafkaProducer - Closing kafka producer!
